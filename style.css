@@ -1,0 +1,129 @@
+
+/* TODO: Cambiar la fuente
+* {
+    font-family: comic-sans;
+} */
+
+body {
+    background-color: #fad7df;
+} 
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-letter {
+    position: relative;
+}
+
+.cover {
+    position: absolute;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-top: 135px solid #fe3334;
+    border-bottom: 135px solid transparent;
+
+    transition: transform .85s;
+    transform-origin: top;
+}
+
+.paper {
+    position: absolute;
+    padding: 1.5rem;
+    line-height: 1.5rem;
+    right: 6px;
+    /*  */
+    z-index: -1; 
+    background: white;
+    width: 180px;
+    height: 196px;
+
+    transition: all .85s;
+}
+
+.letter {
+    border-left: 120px solid #ff989e;
+    border-right: 120px solid #ff989e;
+    border-top: 130px solid transparent;
+    border-bottom: 130px solid #ff858a;
+}
+
+.options {
+    display: flex;
+    gap: 5rem;
+
+   & button {
+     color: #ff3234;
+     font-weight: 600;
+     border-radius: 3px;
+     background: #fad7df;
+     padding: 0.5rem 1rem;
+     border: 1px solid #fe3334;
+     cursor: pointer;
+    }
+
+    & button:hover {
+       background: #ff989e; 
+       color: white;
+    }
+}
+
+.open-cover {
+    transform: rotatex(180deg);
+}
+
+.open-paper {
+   animation: openPaper .5s forwards ;
+}
+
+@keyframes openPaper {
+    0% {
+      top: 0;
+    }
+    100% {
+        top: -180px;
+    }
+}
+
+.close-paper {
+    animation: closePaper .5s forwards ;
+ }
+ 
+ @keyframes closePaper {
+     0% {
+       top: -180px;
+     }
+     100% {
+         top: 0;
+     }
+ }
+
+ .heart {
+    display: none;
+    position: absolute;
+    top: 23%;
+    left: 42%;
+    margin: auto;
+    font-size: 3rem;
+
+    color: #fe3334;
+
+    animation: crecer 1s forwards;
+ }
+
+ @keyframes crecer {
+    0% {
+        scale: 1;
+        opacity: 1;
+    }
+    100% {
+        scale: 5;
+        opacity: 0;
+    }
+ }
